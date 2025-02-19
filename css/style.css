@@ -19,11 +19,16 @@ body {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 .main-container {
   width: 100%;
   max-width: 1440px;
-  padding: 0 50px;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 /* HEADER */
@@ -91,6 +96,88 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* MAIN CONTENT */
+
+.main-content {
+  /* Récupéré de main-container pour exclure le header */
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+/* MAIN HEADER */
+
+/* DIV TITLE */
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+h1 {
+  margin: 0 0 8px 0;
+  font-size: 1.375em;
+}
+
+/* SEARCH FORM */
+.search-form {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 377px;
+  height: 50px;
+  border-radius: 15px;
+
+  border: var(--main-bg-color) 1px solid;
+}
+
+.search-form-icon {
+  width: 50px;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--main-bg-color);
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.fa-location-dot {
+  width: 14px;
+  height: 18px;
+  color: #000000;
+}
+
+.search-input {
+  border: none;
+  width: 195px;
+  height: 100%;
+  text-align: center;
+  font-size: 1.125em;
+  font-weight: 700;
+  padding: 0;
+}
+
+.search-button {
+  background: var(--main-color);
+  width: 132px;
+  height: 50px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.125em;
+  font-weight: 700;
+  border: none;
+}
+
+.search-button-xs {
+  display: none;
+}
+
+/* MAIN HEADER */
 
 .section-title {
   margin: 0;
@@ -222,5 +309,31 @@ a {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-  /* ... */
+  .search-form {
+    width: 335px;
+  }
+
+  .search-input {
+    width: 235px;
+  }
+  .search-button {
+    display: none;
+  }
+
+  .search-button-xs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .fa-magnifying-glass {
+    color: #ffffff;
+    width: 17px;
+    height: 17px;
+  }
 }
