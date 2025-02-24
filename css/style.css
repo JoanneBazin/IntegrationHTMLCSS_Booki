@@ -27,6 +27,7 @@ p {
 .main-container {
   width: 100%;
   max-width: 1440px;
+
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -436,6 +437,28 @@ h2 {
   height: 13.5%;
   display: flex;
   align-items: center;
+}
+
+/* FOOTER */
+
+footer {
+  margin: 5px 50px 0 50px;
+  display: flex;
+  background: var(--main-bg-color);
+}
+
+.footer-content {
+  width: 33%;
+  padding: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  padding-bottom: 15px;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
