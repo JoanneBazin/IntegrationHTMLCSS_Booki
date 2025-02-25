@@ -65,11 +65,11 @@ header {
   transition: color 0.2s;
 } */
 
-.nav-links a {
+.nav-links li {
   position: relative;
 }
 
-.nav-links a::before {
+.nav-links li::before {
   content: "";
   position: absolute;
   top: -16px;
@@ -82,12 +82,12 @@ header {
   transition: transform 0.2s ease-in-out;
 }
 
-.nav-links a:hover {
+.nav-links li:hover {
   color: var(--main-color);
   transition: color 0.2s ease-in-out;
 }
 
-.nav-links a:hover::before {
+.nav-links li:hover::before {
   transform: scaleX(1);
 }
 
@@ -192,12 +192,10 @@ h2 {
   gap: 15px;
   align-items: center;
   width: fit-content;
-  height: 50px;
 }
 
 .filter-buttons-container {
   display: flex;
-  height: 100%;
   gap: 15px;
 }
 
@@ -206,7 +204,7 @@ h2 {
   gap: 10px;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 50px;
   padding: 4px 19px;
   border-radius: 25px;
   border: var(--border-color) 2px solid;
@@ -236,7 +234,6 @@ h2 {
 .info-main-header {
   display: flex;
   align-items: center;
-  height: 24px;
   gap: 10px;
 }
 
@@ -485,6 +482,20 @@ footer {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+  /*  */
+  .nav-links li:hover::before {
+    transform: scaleX(0);
+  }
+  /*  */
+
+  .active-nav-link {
+    color: var(--main-color);
+  }
+
+  .nav-links li.active-nav-link::before {
+    transform: scale(1);
+  }
+
   .filters-container {
     display: flex;
     flex-direction: column;
@@ -518,7 +529,6 @@ footer {
   }
 
   .populaires-cards {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -542,15 +552,58 @@ footer {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-  /* SEARCH FORM MAIN HEADER */
+  header {
+    flex-direction: column;
+  }
+
+  .logo {
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 15px;
+    border-bottom: var(--main-bg-color) 2px solid;
+  }
+
+  .nav-links li {
+    width: 50%;
+    text-align: center;
+  }
+
+  .nav-links li::before {
+    top: 33.67px;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  /* Main header */
+
+  .main-header {
+    align-items: center;
+    padding: 0 20px;
+  }
 
   .search-form {
-    width: 335px;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .search-input {
-    width: 235px;
+    width: auto;
+    flex: 1;
   }
+
   .search-button {
     display: none;
   }
@@ -569,5 +622,107 @@ footer {
   .fa-magnifying-glass {
     color: #ffffff;
     font-size: 17px;
+  }
+
+  .filters-container {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .filter-buttons-container {
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: space-between;
+    row-gap: 20px;
+  }
+
+  .filter-button {
+    width: calc(50% - 10px);
+  }
+
+  .filter-button p {
+    font-size: 14px;
+  }
+
+  /* Sections */
+
+  .main-sections {
+    gap: 0;
+  }
+
+  .hebergements-sections {
+    border-radius: 0;
+    margin: 0;
+    gap: 15px;
+  }
+
+  #populaires {
+    order: 1;
+    padding: 30px 20px;
+    gap: 15px;
+  }
+
+  .populaires-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .populaires-cards a {
+    width: 100%;
+  }
+
+  #hebergements {
+    order: 2;
+    background: #ffffff;
+    margin-top: 15px;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .hebergements-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hebergements-cards a {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hebergements-cards img {
+    object-position: center;
+  }
+
+  #activities {
+    order: 3;
+    margin-top: 35px;
+  }
+
+  .activities-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .activities-cards a {
+    width: 100%;
+    max-width: none;
+  }
+
+  .activities-cards .card {
+    height: 200px;
+  }
+
+  /* Footer */
+
+  footer {
+    margin: 5px 0 0 0;
+    flex-direction: column;
+    gap: 50px;
+    padding: 30px;
+  }
+
+  .footer-content {
+    width: fit-content;
+    padding: 0;
   }
 }
