@@ -97,20 +97,33 @@ header {
 
 /* MAIN CONTENT */
 
-.main-content section {
-  display: flex;
-  flex-direction: column;
-}
-
 .main-content,
 footer {
   margin: 0 50px;
   box-sizing: border-box;
 }
 
+.main-content {
+  display: grid;
+  grid-template-columns: 65% 32%;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "s1 s1"
+    "s2 s3"
+    "s4 s4";
+  column-gap: 3%;
+}
+
+.main-content section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+}
+
 /* MAIN HEADER */
 
 #main-header {
+  grid-area: s1;
   gap: 35px;
 }
 
@@ -295,19 +308,8 @@ footer {
 }
 
 /****** Sections ***********/
-.main-sections {
-  margin: 35px 0;
-  display: grid;
-  grid-template-columns: 65% 32%;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "s1 s2"
-    "s3 s3";
-  column-gap: 3%;
-  row-gap: 35px;
-}
 
-.main-sections section {
+.main-section {
   padding: 30px;
   box-sizing: border-box;
   gap: 30px;
@@ -320,7 +322,7 @@ footer {
 
 /****** Hebergements ***********/
 #hebergements {
-  grid-area: s1;
+  grid-area: s2;
 }
 
 .hebergements-cards {
@@ -354,7 +356,7 @@ footer {
 
 /****** Populaires ***********/
 #populaires {
-  grid-area: s2;
+  grid-area: s3;
 }
 
 .populaires-title {
@@ -395,7 +397,7 @@ footer {
 /* Activities */
 
 #activities {
-  grid-area: s3;
+  grid-area: s4;
 }
 
 .activities-cards {
@@ -492,14 +494,17 @@ footer {
     font-size: 16px;
   }
 
-  .main-sections {
+  .main-content {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+  }
+
+  #hebergements {
+    margin-bottom: 50px;
   }
 
   #populaires {
-    margin-top: 15px;
+    gap: 20px;
   }
 
   .populaires-cards {
@@ -612,10 +617,6 @@ footer {
 
   /* Sections */
 
-  .main-sections {
-    gap: 0;
-  }
-
   .hebergements-sections {
     border-radius: 0;
     margin: 0;
@@ -631,18 +632,18 @@ footer {
   #populaires {
     order: 1;
     padding: 30px 20px;
+    margin-bottom: 15px;
   }
 
   #hebergements {
     order: 2;
     background: #ffffff;
-    margin-top: 15px;
     padding: 20px;
+    margin-bottom: 35px;
   }
 
   #activities {
     order: 3;
-    margin-top: 35px;
   }
 
   .activities-cards a {
