@@ -42,7 +42,6 @@ p {
 .main-container {
   width: 100%;
   max-width: 1440px;
-  /* min-width: 320px  ? */
 }
 
 /* HEADER */
@@ -192,8 +191,6 @@ footer {
   border: var(--border-color) 2px solid;
   background: none;
   padding: 4px 19px;
-
-  box-sizing: border-box;
 }
 
 .filter-button:hover {
@@ -493,7 +490,6 @@ footer {
 
   .filter-button p {
     font-size: 16px;
-    font-weight: 700;
   }
 
   .main-sections {
@@ -602,22 +598,16 @@ footer {
   .filter-buttons-container {
     flex-wrap: wrap;
     height: fit-content;
+    column-gap: 10px;
   }
 
   .filter-button {
-    width: 45%;
+    width: calc(50% - 5px);
     max-width: 270px;
-    min-width: 155px;
-    gap: 8px;
   }
 
   .filter-button p {
     font-size: 14px;
-    text-align: left;
-  }
-
-  .filter-button i {
-    font-size: 20px;
   }
 
   /* Sections */
@@ -675,5 +665,13 @@ footer {
   .footer-content {
     width: fit-content;
     padding: 0;
+  }
+}
+
+@media (max-width: 361px) {
+  .filter-button {
+    padding: 0;
+    justify-content: center;
+    gap: 8px;
   }
 }
